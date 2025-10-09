@@ -2,8 +2,8 @@
 
 int main() {
 
-    int num1, num2;
-    bool resultado;
+    int num1{}, num2{};
+    bool resultado{};
 
     std::cin >> num1 >> num2;
 

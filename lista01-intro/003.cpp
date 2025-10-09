@@ -3,7 +3,7 @@
 
 int main() {
 
-    std::string nomeCompleto;
+    std::string nomeCompleto{};
     std::cout << "Digite o seu nome completo: " << std::endl;
 
     // std::cin >> nomeCompleto; Esse formato nao é bom para esse problema porque ele para de reconhecer no primeiro espaço

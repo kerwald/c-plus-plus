@@ -2,7 +2,7 @@
 
 int main() {
 
-    std::string nome, sobrenome;
+    std::string nome{}, sobrenome{};
 
     std::cout << "digite seu nome: ";
     std::cin >> nome;

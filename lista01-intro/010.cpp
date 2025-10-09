@@ -2,7 +2,7 @@
 
 int main() {
 
-    int idade;
+    int idade{};
     std::cout << "Digite sua idade: ";
     std::cin >> idade;
 

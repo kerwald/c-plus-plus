@@ -2,7 +2,7 @@
 
 int main() {
 
-    int inteiro;
+    int inteiro{};
 
     std::cin >> inteiro;
     
