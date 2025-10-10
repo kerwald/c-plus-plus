@@ -24,7 +24,7 @@ class Pessoa {
 
 int main(){
 
-    Pessoa Joao;
+    Pessoa Joao{};
     Joao.setIdade( 22 );
     Joao.setNome( "Joao Kerwald" );
 
