@@ -70,7 +70,7 @@ Crie uma classe simples chamada `Log` que, em seu construtor, imprima "Log criad
 Crie uma classe `Produto` com um atributo `private` `preco`. Crie um método `setPreco(double preco)` onde o nome do parâmetro é igual ao nome do atributo. Use o ponteiro `this` (`this->preco = preco;`) para diferenciar o atributo do parâmetro.
 
 #### [Exercicio 020](020.cpp)
-Crie um método `aumentarPreco(double percentual)` na classe `Produto` que aumenta o preço do produto. Faça este método retornar uma referência ao próprio objeto (`*this`).
+Crie um método `aumentarPreco(double percentual)` na classe `Produto` que aumenta o preço do produto. Faça este método retornar uma referência ao próprio objeto (`*this`). Adicione o retorno no metodo setPreco tambem.
 
 #### [Exercicio 021](021.cpp)
 Use o retorno do exercício anterior para, no `main`, chamar métodos em sequência. Ex: `meuProduto.setPreco(100.0).aumentarPreco(10);`. Imprima o preço final.
