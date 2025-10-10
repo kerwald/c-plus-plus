@@ -16,7 +16,7 @@ class Pessoa {
 
 int main(){
 
-    Pessoa Joao /*{ "Felipe", 22 }*/;
+    Pessoa Joao{} /*{ "Felipe", 22 }*/;
 
     std::cout << /* Joao.nome */ "Felipe" << " " << /*Joao.idade*/ "22" << std::endl; // Erro de compilacao, os atributos sao privates, so podem ser modificados no escopo da classe
     Joao.apresentar();

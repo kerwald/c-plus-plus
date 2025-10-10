@@ -1,6 +1,6 @@
 #include <iostream>
 
-class carro{
+class Carro{
 
     private:
 
