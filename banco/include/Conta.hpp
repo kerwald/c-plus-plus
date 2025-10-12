@@ -4,10 +4,11 @@
 class Conta{ 
 
     private:
+        static int numeroDeContas;
         double saldo;
-        std::string cpfTitular;
-        std::string nomeTitular;
-        std::string numero;
+        const std::string cpfTitular;
+        const std::string nomeTitular;
+        const std::string numero;
 
     public:
         Conta( std::string nomeTitular, std::string cpfTitular, std::string numero, double saldo );

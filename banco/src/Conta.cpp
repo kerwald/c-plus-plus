@@ -2,18 +2,40 @@
 #include <iostream>
 #include <string>
 
-Conta::Conta( std::string nomeTitular, std::string cpfTitular, std::string numero, double saldo ){
-    this->saldo = saldo;
-    this->cpfTitular = cpfTitular;
-    this->nomeTitular = nomeTitular;
-    this->numero = numero;
+// Definição e inicialização do membro estático privado 'numeroDeContas'.
+// Esta variável é ÚNICA e COMPARTILHADA por todos os objetos da classe Conta.
+//
+// MEMÓRIA E TEMPO DE VIDA:
+// 1. É alocada no 'segmento de dados' memoria global(static), onde fica as variáveis estáticas e globais
+//
+// 2. Possui 'duração de armazenamento estática': 
+//      É criada quando o programa inicia e destruída apenas quando o programa termina.
+//
+// 3. Sua existência NÃO DEPENDE da criação de nenhum objeto da classe.
+
+int Conta::numeroDeContas{}; // Inicializacao do atributo static privado
+                      // Pode ser acessado por dentro de qualquer objeto da classe Conta e modificado.
+                      // Numero de Contas vai ser somado 1 todas as vezes que for chamado 
+                      // um construtor de um objeto da classe Conta
+
+Conta::Conta( std::string nomeTitular, std::string cpfTitular, std::string numero, double saldo ) :
+    nomeTitular( nomeTitular ),
+    cpfTitular( cpfTitular ),
+    numero( numero )
+    // Esses atributos sao obrigados a serem construidos por lista de inicialização porque sao atributos constantes "const"
+{
+    this->saldo = saldo; // Não é obrigatório, mas é menos eficiente
+    numeroDeContas++;
 }
 
 Conta::Conta( std::string nomeTitular,std::string cpfTitular, std::string numero ) : 
     nomeTitular( nomeTitular ), 
     cpfTitular( cpfTitular ), 
     numero( numero )
-{}  // Lista de inicialização -> uma forma mais compacta de criar um construtor 
+{
+    numeroDeContas++;
+}  
+    // Lista de inicialização -> uma forma mais compacta de criar um construtor 
     // Compilador consegue otimizar - processo de inicialização acontece somente uma vez
 
     /*
