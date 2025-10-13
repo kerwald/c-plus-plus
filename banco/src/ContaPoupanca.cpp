@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-ContaPoupanca::ContaPoupanca( const std::string &nomeTitular, const std::string &cpfTitular, const std::string &senha, const std::string &numero, const double &saldo ) :
+ContaPoupanca::ContaPoupanca( const std::string &nomeTitular, const Cpf &cpfTitular, const std::string &senha, const std::string &numero, const double &saldo ) :
     Conta( nomeTitular, cpfTitular, senha, numero, saldo )
 {}
 

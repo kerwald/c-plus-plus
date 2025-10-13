@@ -2,8 +2,8 @@
 #include "Cpf.hpp"
 #include <string>
 
-Gerente::Gerente( const std::string &nome, const Cpf &cpf, const std::string &senha, const double &salario ) :
-    Funcionario( nome, cpf, salario ),
+Gerente::Gerente( const std::string &nome, const Cpf &cpf, const std::string &senha, const double &salario, const DiaDaSemana &diaDoPagamento ) :
+    Funcionario( nome, cpf, salario, diaDoPagamento ),
     Autenticavel( senha )
 {}
 

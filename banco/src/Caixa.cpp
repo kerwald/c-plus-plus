@@ -5,8 +5,8 @@
 #include "Cpf.hpp"
 #include <string>
 
-Caixa::Caixa( const std::string &nome, const Cpf &cpf, const double &salario, const std::string &senha ) :
-    Funcionario( nome, cpf, salario ),
+Caixa::Caixa( const std::string &nome, const Cpf &cpf, const double &salario , const std::string &senha, const DiaDaSemana &diaDoPagamento ) :
+    Funcionario( nome, cpf, salario, diaDoPagamento ),
     Autenticavel( senha )
 {}
 

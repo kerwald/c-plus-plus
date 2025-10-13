@@ -110,3 +110,7 @@ Titular Conta::getTitular() const{
 std::string Conta::getNumero() const{
     return numero;
 }
+
+void Conta::operator += ( const double &valorADepositar ){
+    depositar( valorADepositar );
+}

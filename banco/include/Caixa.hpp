@@ -6,6 +6,6 @@
 
 class Caixa final : public Funcionario, public Autenticavel {
     public:
-        Caixa( const std::string &nome, const Cpf &cpf, const double &salario , const std::string &senha );
+        Caixa( const std::string &nome, const Cpf &cpf, const double &salario , const std::string &senha, const DiaDaSemana &diaDoPagamento );
         double bonificacao() const override;
 };

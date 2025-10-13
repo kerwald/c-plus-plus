@@ -3,9 +3,10 @@
 #include <iostream>
 #include <string>
 
-Funcionario::Funcionario( const std::string &nome, const Cpf &cpf, const double  &salario ) :
+Funcionario::Funcionario( const std::string &nome, const Cpf &cpf, const double  &salario, const DiaDaSemana &diaDoPagamento ) :
     Pessoa( nome, cpf ),
-    salario( salario )
+    salario( salario ),
+    diaDoPagamento( diaDoPagamento )
 {
     std::cout << "Construtor de Funcionario: " << std::endl;
 }

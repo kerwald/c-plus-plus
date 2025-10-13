@@ -1,10 +1,11 @@
 #include "ContaCorrente.hpp"
 #include "Titular.hpp"
+#include "Cpf.hpp"
 #include <string.h>
 #include <iostream>
 
 
-ContaCorrente::ContaCorrente( const std::string &nomeTitular, const std::string &cpfTitular, const std::string &senha, const std::string &numero,  double &saldo ) :
+ContaCorrente::ContaCorrente( const std::string &nomeTitular, const Cpf &cpfTitular, const std::string &senha, const std::string &numero,  double &saldo ) :
     Conta( nomeTitular, cpfTitular, senha, numero, saldo )
 {}
 

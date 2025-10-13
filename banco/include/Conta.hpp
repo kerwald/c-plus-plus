@@ -39,6 +39,7 @@ class Conta{
                                                 // serve como um modelo para outras classes mais específicas
                                                 // Esse =0 diz que o metodo nao tem implementacao 
                                                 // e que a implementacao vai ser feito nas classes derivadas 
+        void operator += ( const double &valorADepositar );
 };
 
 /*

@@ -9,7 +9,7 @@
 
 int main(){
 
-    ContaPoupanca conta01{ "Felipe kerwald", "735.287.910-20", "12345", "0113578", 1500 };
+    ContaPoupanca conta01{ "Felipe kerwald", Cpf{ "735.287.910-20" }, "12345", "0113578", 1500 };
 
     std::cout << conta01.getTitular().getNome() << std::endl;
 
@@ -47,9 +47,9 @@ int main(){
     */
     delete conta04;
     
-    Gerente gerente{ "Zaphod Beeblebrox", Cpf{ "010.243.230-99" }, "12345", 2000.00 };
+    Gerente gerente{ "Zaphod Beeblebrox", Cpf{ "010.243.230-99" }, "12345", 2000.00, DiaDaSemana::Sabado };
 
-
+/*
 
 // ===================================================================================
 // NOTA: O Problema do Diamante (The Diamond Problem) e Herança Virtual
@@ -61,7 +61,7 @@ int main(){
 // de uma mesma classe base A.
 //
 //      A
-//     / \
+//     / \                 
 //    B   C
 //     \ /
 //      D
@@ -93,6 +93,12 @@ int main(){
 // não estados (dados), o que naturalmente evita o problema de múltiplas cópias de dados.
 //
 // ===================================================================================
+*/
+    ContaPoupanca conta42{ "carlinhosmaia", Cpf{ "735.287.910-20" } , "1238884", "1234", 40000.00 };
+    std::cout << conta42.getSaldo() << std::endl;
+    conta42 += 1000; // void operator += ( const double &valorADepositar );   
+                     // Funciona devido a esse metodo na classe Conta
+    std::cout << conta42.getSaldo() << std::endl;
 
     return 0;
 
