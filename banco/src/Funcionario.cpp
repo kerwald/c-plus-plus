@@ -12,3 +12,7 @@ Funcionario::Funcionario( const std::string &nome, const Cpf &cpf, float salario
 std::string Funcionario::getNome() const{
     return nome;
 }
+
+double Funcionario::getSalario() const{
+    return salario;
+}

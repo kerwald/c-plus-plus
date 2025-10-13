@@ -11,5 +11,8 @@ class Funcionario : public Pessoa {
 
     public:
         Funcionario( const std::string &nome, const Cpf &cpf, float salario );
+        virtual ~Funcionario();
         std::string getNome() const;
+        double getSalario() const;
+        virtual double bonificacao() const = 0;
 };

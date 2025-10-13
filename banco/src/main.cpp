@@ -1,21 +1,24 @@
+#include "ContaPoupanca.hpp"
 #include "Conta.hpp"
+#include "ContaCorrente.hpp"
 #include "Titular.hpp"
 #include "Funcionario.hpp"
 #include <iostream>
+#include <string> 
 
 int main(){
 
-    Conta conta01{ "Felipe kerwald", "735.287.910-20", "0113578", 1500 };
+    ContaPoupanca conta01{ "Felipe kerwald", "735.287.910-20", "0113578", 1500 };
 
-    std::cout << conta01.getTitular().getNome() << " ";
+    std::cout << conta01.getTitular().getNome() << std::endl;
 
-    Conta conta02{ Titular { "Joao Silveira", Cpf { "735.287.910-20" } } , "6508467" };
+    ContaCorrente conta02{ Titular { "Joao Silveira", Cpf { "735.287.910-20" } } , "6508467" };
 
-    Conta conta03{ Titular { "Joao Silveira", Cpf { "735.287.910-20" } } , "6508467" };
+    ContaCorrente conta03{ Titular { "Joao Silveira", Cpf { "735.287.910-20" } } , "6508467" };
 
     conta01.depositar( 500 ).sacar( 1000 );
 
-    std::cout << conta01.getSaldo() << " ";
+    std::cout << conta01.getSaldo() << std::endl;
 
     Cpf cpf = ( std::string ) "735.287.910-20"; // Conversão implicita  
 /*
@@ -34,7 +37,7 @@ int main(){
                                             
     std::cout << cpf.getNumero() << std::endl;
 
-    Conta *conta04 = new Conta{ Titular{ "carlinhos maia", Cpf { "735.287.910-20" } }, "7845294" }; 
+    Conta *conta04 = new ContaCorrente{ Titular{ "carlinhos maia", Cpf { "735.287.910-20" } }, "7845294" }; 
     /*
         Alloca na heap
         custosa mais lenta que usar a stack

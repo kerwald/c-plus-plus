@@ -82,8 +82,9 @@ Conta::~Conta(){
 }
 
 Conta& Conta::sacar( const double &valor ){
-    if( ( saldo - valor ) >= 0){
-        saldo -= valor;
+    const  double valorDeSaque{ valor * taxaDeSaque() + valor };
+    if( ( saldo - valorDeSaque ) >= 0){
+        saldo -= valorDeSaque;
     } else{
         std::cerr << "Saldo insuficiente!";
     }
@@ -91,7 +92,8 @@ Conta& Conta::sacar( const double &valor ){
 }
 
 Conta& Conta::depositar( const double &valor ){
-    saldo += valor;
+    const  double valorDeDeposito{ valor - ( valor * taxaDeSaque() ) };
+    saldo += valorDeDeposito;
     return *this;
 }
 

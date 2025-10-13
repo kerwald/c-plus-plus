@@ -12,18 +12,17 @@ ContaCorrente::ContaCorrente( const Titular &titular, const std::string &numero 
     Conta( titular, numero )
 {}
 
-ContaCorrente& ContaCorrente::sacar( const double &valor ){
-    const double valorDoSaque{ valor * 0.05 + valor }; // valor * 0.05 = tarifa
-    if( ( saldo - valorDoSaque ) >= 0){
-        saldo -= valorDoSaque;
-    } else{
-        std::cerr << "Saldo insuficiente!";
-    }
-    return *this;
+double ContaCorrente::taxaDeSaque() const{
+    return 0.05;
 }
 
-ContaCorrente& ContaCorrente::depositar( const double &valor ){
-    const double valorDoDeposito{ valor - ( valor * 0.05 ) }; // valor * 0.05 = tarifa
-    saldo += valorDoDeposito;
-    return *this;
+void ContaCorrente::TransferePara( Conta &conta, double &valor ){
+    
+    if( saldo >= valor ){
+        saldo -= valor;
+        conta.depositar( valor );
+    } else{
+        std::cerr << "Saldo insuficiente!! " << std::endl;
+    }
+
 }

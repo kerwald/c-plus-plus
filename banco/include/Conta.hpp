@@ -3,6 +3,7 @@
 #include <string>
 
 class Conta{ 
+
     private:
         static int numeroDeContas;
         const Titular titular;
@@ -18,7 +19,7 @@ class Conta{
                   // Utilizalo quando for necessario desalocar memoria alocada 
                   // ou qualquer operacao que precise ser feita quando um objeto ira deixar de existir
                   // Como decrementar numeroDeContas
-        virtual Conta& sacar( const double &valor ); //     O uso de virtual garante que se o objeto for alocado na heap 
+        Conta& sacar( const double &valor ); //     O uso de virtual garante que se o objeto for alocado na heap 
                                                      // ou tiver usando ponteiros o compilador vai verificar o tipo do objeto 
                                                      // do qual o ponteiro esta apontado para decidir o metodo que vai chamar
                                                      // e nao decidir o metodo com base no tipo do ponteiro.
@@ -28,11 +29,15 @@ class Conta{
                                                      //     Ocorre em tempo de execução! Uso de virtual table Vtable.
                                                      //
                                                      //     Ponteiro que aponta para uma tabela de ponteiros para os metodos corretos.
-        virtual Conta& depositar( const double &valor );
+        Conta& depositar( const double &valor );
         double getSaldo() const;
         Titular getTitular() const;
         std::string getNumero() const; 
-
+        virtual double taxaDeSaque() const = 0; // Ter um ou mais desse = 0 determina se a classe é abstrada ou nao
+                                                // uma classe abstrata não pode ser instanciada diretamente e 
+                                                // serve como um modelo para outras classes mais específicas
+                                                // Esse =0 diz que o metodo nao tem implementacao 
+                                                // e que a implementacao vai ser feito nas classes derivadas 
 };
 
 /*
