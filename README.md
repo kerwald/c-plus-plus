@@ -9,7 +9,7 @@ O conteúdo está organizado da seguinte forma:
 * **/listaXX**: Pastas numeradas (`/lista01`, `/lista02`, etc.) que seguem o roteiro de estudos abaixo. Cada pasta contém os arquivos de solução (ex: `001.cpp`, `002.cpp`) e um `README.md` específico com os enunciados daquela lista.
 * **/exercicios**: Uma pasta com exercícios mais básicos e avulsos, que não se encaixam diretamente no roteiro principal, mas que serviram de prática inicial.
 
-    Além disso, Existem diferentes pastas contendo um pequeno projeto desenvolvido em c++ como **/jogoDaAdivinhacao** por exemplo.
+    Além disso, Existem diferentes pastas contendo pequenos projetos desenvolvido em c++ como **/jogoDaAdivinhacao** por exemplo.
 
 
 ## 🗺️ Roteiro de Estudos
