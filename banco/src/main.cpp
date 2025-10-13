@@ -4,19 +4,19 @@
 
 int main(){
 
-    Conta conta01{ "Felipe kerwald", "878.099.370-22", "0113578", 1500 };
+    Conta conta01{ "Felipe kerwald", "735.287.910-20", "0113578", 1500 };
 
-    std::cout << conta01.getTitular().getNomeTitular();
+    std::cout << conta01.getTitular().getNomeTitular() << " ";
 
-    Conta conta02{ Titular { "Joao Silveira", Cpf { "878.099.370-22" } } , "6508467" };
+    Conta conta02{ Titular { "Joao Silveira", Cpf { "735.287.910-20" } } , "6508467" };
 
-    Conta conta03{ Titular { "Joao Silveira", Cpf { "878.099.370-22" } } , "6508467" };
+    Conta conta03{ Titular { "Joao Silveira", Cpf { "735.287.910-20" } } , "6508467" };
 
     conta01.depositar( 500 ).sacar( 1000 );
 
-    std::cout << conta01.getSaldo();
+    std::cout << conta01.getSaldo() << " ";
 
-    Cpf cpf = ( std::string ) "878.099.370-22"; // Conversão implicita  
+    Cpf cpf = ( std::string ) "735.287.910-20"; // Conversão implicita  
 /*
  * O que a palavra-chave 'explicit' faz:
  *      1. Em construtores: ao colocar explicit antes de comecar o construtor ex. explicit Cpf(){}
@@ -32,5 +32,13 @@ int main(){
 */
                                             
     std::cout << cpf.getNumero() << std::endl;
+
+    Conta *conta04 = new Conta{ Titular{ "carlinhos maia", Cpf { "735.287.910-20" } }, "7845294" }; 
+    /*
+        Alloca na heap
+        custosa mais lenta que usar a stack
+        heap possui mais memoria
+        Usar somente quando precisar de muita memoria
+    */
 
 }
