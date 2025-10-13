@@ -4,4 +4,5 @@
 class Titular : public Pessoa {
     public:
         Titular( const std::string &nome, const Cpf &cpf );
+        std::string getNome() const;
 };

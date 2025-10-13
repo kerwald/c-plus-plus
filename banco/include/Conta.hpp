@@ -3,22 +3,32 @@
 #include <string>
 
 class Conta{ 
-
     private:
         static int numeroDeContas;
         const Titular titular;
         const std::string numero;
+
+    protected:
         double saldo;
 
     public:
-        Conta( std::string nomeTitular, std::string cpfTitular, std::string numero, double saldo );
-        Conta( Titular titular, std::string numero );
-        ~Conta(); // método é chamado quando o objeto é destruido seja por um delete ou por sair do escopo
+        Conta( const std::string &nomeTitular, const std::string &cpfTitular, const std::string &numero, const double &saldo );
+        Conta( const Titular &titular, const std::string &numero );
+        virtual ~Conta(); // método é chamado quando o objeto é destruido seja por um delete ou por sair do escopo
                   // Utilizalo quando for necessario desalocar memoria alocada 
                   // ou qualquer operacao que precise ser feita quando um objeto ira deixar de existir
                   // Como decrementar numeroDeContas
-        Conta& sacar( const int &valor );
-        Conta& depositar( const int &valor );
+        virtual Conta& sacar( const double &valor ); //     O uso de virtual garante que se o objeto for alocado na heap 
+                                                     // ou tiver usando ponteiros o compilador vai verificar o tipo do objeto 
+                                                     // do qual o ponteiro esta apontado para decidir o metodo que vai chamar
+                                                     // e nao decidir o metodo com base no tipo do ponteiro.
+                                                     //
+                                                     //     Sempre que tiver um método virtual o destrutor precisa ser virtual também.
+                                                     //
+                                                     //     Ocorre em tempo de execução! Uso de virtual table Vtable.
+                                                     //
+                                                     //     Ponteiro que aponta para uma tabela de ponteiros para os metodos corretos.
+        virtual Conta& depositar( const double &valor );
         double getSaldo() const;
         Titular getTitular() const;
         std::string getNumero() const; 

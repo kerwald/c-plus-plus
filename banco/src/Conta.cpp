@@ -18,7 +18,7 @@ int Conta::numeroDeContas{}; // Inicializacao do atributo static privado
                       // Numero de Contas vai ser somado 1 todas as vezes que for chamado 
                       // um construtor de um objeto da classe Conta
 
-Conta::Conta( std::string nomeTitular, std::string cpfTitular, std::string numero, double saldo ) :
+Conta::Conta( const std::string &nomeTitular, const std::string &cpfTitular, const std::string &numero, const double &saldo ) :
     titular( nomeTitular, Cpf{ cpfTitular } ),
     numero( numero )
     // Esses atributos sao obrigados a serem construidos por lista de inicialização porque sao atributos constantes "const"
@@ -27,7 +27,7 @@ Conta::Conta( std::string nomeTitular, std::string cpfTitular, std::string numer
     numeroDeContas++;
 }
 
-Conta::Conta( Titular titular, std::string numero ) : 
+Conta::Conta( const Titular &titular, const std::string &numero ) : 
     titular( titular ),
     numero( numero ),
     saldo( 0 )
@@ -81,7 +81,7 @@ Conta::~Conta(){
     numeroDeContas--;
 }
 
-Conta& Conta::sacar( const int &valor ){
+Conta& Conta::sacar( const double &valor ){
     if( ( saldo - valor ) >= 0){
         saldo -= valor;
     } else{
@@ -90,7 +90,7 @@ Conta& Conta::sacar( const int &valor ){
     return *this;
 }
 
-Conta& Conta::depositar( const int &valor ){
+Conta& Conta::depositar( const double &valor ){
     saldo += valor;
     return *this;
 }

@@ -41,7 +41,8 @@ int main(){
         heap possui mais memoria
         Usar somente quando precisar de muita memoria
     */
-
+    delete conta04;
+    
     Funcionario funcionario01{ "Zaphod Beeblebrox", Cpf{ "010.243.230-99" }, 2000.00 };
 
     return 0;

@@ -7,6 +7,7 @@ Pessoa::Pessoa( const std::string &nome, const Cpf &cpf ) :
     nome( nome ),
     cpf( cpf )
 {
+    std::cout << "Construtor de Pessoa: " << std::endl;
     verificaValidadeNome( nome );
 }
 

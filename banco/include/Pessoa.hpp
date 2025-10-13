@@ -4,8 +4,8 @@
 
 class Pessoa{
     protected: // Mantem acesso somente entre classes herdadas
-        Cpf cpf;
-        std::string nome;
+        const std::string nome;
+        const Cpf cpf;
     public: // Mantem acesso entre todos
         Pessoa( const std::string &nome, const Cpf &cpf );
     private: // Mantém o acesso para a própria classe e para suas classes derivadas (filhas).
