@@ -96,7 +96,7 @@ Conta& Conta::depositar( const int &valor ){
 }
 
 double Conta::getSaldo() const{
-    return saldo;
+    return  saldo;
 }
 
 Titular Conta::getTitular() const{

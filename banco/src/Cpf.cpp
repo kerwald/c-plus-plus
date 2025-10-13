@@ -15,6 +15,10 @@ Cpf::Cpf( const std::string &numero ) : numero( numero ) {
     
 }
 
+std::string Cpf::getNumero() const{
+    return numero;
+}
+
 bool Cpf::validaCpf( const std::string &numero ) const{
 
     std::string cpf = removerFormatacao( numero );
