@@ -1,12 +1,13 @@
 #include "Conta.hpp"
 #include "Titular.hpp"
+#include "Funcionario.hpp"
 #include <iostream>
 
 int main(){
 
     Conta conta01{ "Felipe kerwald", "735.287.910-20", "0113578", 1500 };
 
-    std::cout << conta01.getTitular().getNomeTitular() << " ";
+    std::cout << conta01.getTitular().getNome() << " ";
 
     Conta conta02{ Titular { "Joao Silveira", Cpf { "735.287.910-20" } } , "6508467" };
 
@@ -40,5 +41,9 @@ int main(){
         heap possui mais memoria
         Usar somente quando precisar de muita memoria
     */
+
+    Funcionario funcionario01{ "Zaphod Beeblebrox", Cpf{ "010.243.230-99" }, 2000.00 };
+
+    return 0;
 
 }
