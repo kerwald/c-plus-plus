@@ -49,6 +49,51 @@ int main(){
     
     Gerente gerente{ "Zaphod Beeblebrox", Cpf{ "010.243.230-99" }, "12345", 2000.00 };
 
+
+
+// ===================================================================================
+// NOTA: O Problema do Diamante (The Diamond Problem) e Herança Virtual
+// ===================================================================================
+//
+// O QUE É?
+// O "Problema do Diamante" é uma ambiguidade que surge na herança múltipla
+// quando uma classe D herda de duas classes (B e C), e ambas B e C herdam
+// de uma mesma classe base A.
+//
+//      A
+//     / \
+//    B   C
+//     \ /
+//      D
+//
+// O problema é que a classe D acaba herdando duas cópias dos membros (variáveis e
+// métodos) da classe A: uma através de B e outra através de C. Se tentarmos
+// acessar um membro de A a partir de um objeto D, o compilador gera um erro
+// de ambiguidade, pois não sabe qual das duas cópias deve usar.
+//
+// A SOLUÇÃO: HERANÇA VIRTUAL
+// Para resolver isso, C++ utiliza a palavra-chave `virtual` na declaração da
+// herança das classes intermediárias.
+//
+// Exemplo:
+// class A { ... };
+// class B : virtual public A { ... };
+// class C : virtual public A { ... };
+// class D : public B, public C { ... };
+//
+// Ao usar `virtual public A`, instruímos o compilador a garantir que a classe
+// final D receba apenas *uma única instância* da classe base A, compartilhada
+// entre B e C. Isso resolve a ambiguidade.
+//
+// USO DE INTERFACES (CLASSES ABSTRATAS) " Sao classes puramente virtuais "
+// Uma boa prática de design que ajuda a mitigar problemas de herança múltipla
+// é usar classes base abstratas (conhecidas como "interfaces"). Interfaces
+// geralmente definem contratos (funções virtuais puras) sem dados de membros.
+// Ao herdar de múltiplas interfaces, você herda principalmente comportamentos,
+// não estados (dados), o que naturalmente evita o problema de múltiplas cópias de dados.
+//
+// ===================================================================================
+
     return 0;
 
 }
