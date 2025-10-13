@@ -1,5 +1,6 @@
 #pragma once
 #include "Titular.hpp"
+#include "Cpf.hpp"
 #include <string>
 
 class Conta{ 
@@ -13,7 +14,7 @@ class Conta{
         double saldo;
 
     public:
-        Conta( const std::string &nomeTitular, const std::string &cpfTitular, const std::string &numero, const double &saldo );
+        Conta( const std::string &nomeTitular, const Cpf &cpfTitular, const std::string &senha, const std::string &numero, const double &saldo );
         Conta( const Titular &titular, const std::string &numero );
         virtual ~Conta(); // método é chamado quando o objeto é destruido seja por um delete ou por sair do escopo
                   // Utilizalo quando for necessario desalocar memoria alocada 

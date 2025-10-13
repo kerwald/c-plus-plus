@@ -4,8 +4,8 @@
 #include <iostream>
 
 
-ContaCorrente::ContaCorrente( const std::string &nomeTitular, const std::string &cpfTitular, const std::string &numero,  double &saldo ) :
-    Conta( nomeTitular, cpfTitular, numero, saldo )
+ContaCorrente::ContaCorrente( const std::string &nomeTitular, const std::string &cpfTitular, const std::string &senha, const std::string &numero,  double &saldo ) :
+    Conta( nomeTitular, cpfTitular, senha, numero, saldo )
 {}
 
 ContaCorrente::ContaCorrente( const Titular &titular, const std::string &numero ) :

@@ -1,4 +1,6 @@
 #include "Conta.hpp"
+#include "Titular.hpp"
+#include "Cpf.hpp"
 #include <iostream>
 #include <string>
 
@@ -18,8 +20,8 @@ int Conta::numeroDeContas{}; // Inicializacao do atributo static privado
                       // Numero de Contas vai ser somado 1 todas as vezes que for chamado 
                       // um construtor de um objeto da classe Conta
 
-Conta::Conta( const std::string &nomeTitular, const std::string &cpfTitular, const std::string &numero, const double &saldo ) :
-    titular( nomeTitular, Cpf{ cpfTitular } ),
+Conta::Conta( const std::string &nomeTitular, const Cpf &cpfTitular, const std::string &senha, const std::string &numero, const double &saldo ) :
+    titular( nomeTitular, cpfTitular, senha ),
     numero( numero )
     // Esses atributos sao obrigados a serem construidos por lista de inicialização porque sao atributos constantes "const"
 {  

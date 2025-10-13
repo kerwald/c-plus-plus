@@ -1,8 +1,11 @@
 #pragma once
 #include "Funcionario.hpp"
+#include "Cpf.hpp"
+#include "Autenticavel.hpp"
+#include <string>
 
-class Caixa : public Funcionario {
+class Caixa final : public Funcionario, public Autenticavel {
     public:
-        Caixa( const std::string &nome, const std::string &cpf, const double &salario );
+        Caixa( const std::string &nome, const Cpf &cpf, const double &salario , const std::string &senha );
         double bonificacao() const override;
 };

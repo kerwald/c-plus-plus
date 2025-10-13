@@ -3,18 +3,19 @@
 #include "ContaCorrente.hpp"
 #include "Titular.hpp"
 #include "Funcionario.hpp"
+#include "Gerente.hpp"
 #include <iostream>
 #include <string> 
 
 int main(){
 
-    ContaPoupanca conta01{ "Felipe kerwald", "735.287.910-20", "0113578", 1500 };
+    ContaPoupanca conta01{ "Felipe kerwald", "735.287.910-20", "12345", "0113578", 1500 };
 
     std::cout << conta01.getTitular().getNome() << std::endl;
 
-    ContaCorrente conta02{ Titular { "Joao Silveira", Cpf { "735.287.910-20" } } , "6508467" };
+    ContaCorrente conta02{ Titular { "Joao Silveira", Cpf { "735.287.910-20" }, "12345" } , "6508467" };
 
-    ContaCorrente conta03{ Titular { "Joao Silveira", Cpf { "735.287.910-20" } } , "6508467" };
+    ContaCorrente conta03{ Titular { "Joao Silveira", Cpf { "735.287.910-20" }, "12345"} , "6508467" };
 
     conta01.depositar( 500 ).sacar( 1000 );
 
@@ -37,7 +38,7 @@ int main(){
                                             
     std::cout << cpf.getNumero() << std::endl;
 
-    Conta *conta04 = new ContaCorrente{ Titular{ "carlinhos maia", Cpf { "735.287.910-20" } }, "7845294" }; 
+    Conta *conta04 = new ContaCorrente{ Titular{ "carlinhos maia", Cpf { "735.287.910-20" }, "12345" }, "7845294" }; 
     /*
         Alloca na heap
         custosa mais lenta que usar a stack
@@ -46,7 +47,7 @@ int main(){
     */
     delete conta04;
     
-    Funcionario funcionario01{ "Zaphod Beeblebrox", Cpf{ "010.243.230-99" }, 2000.00 };
+    Gerente gerente{ "Zaphod Beeblebrox", Cpf{ "010.243.230-99" }, "12345", 2000.00 };
 
     return 0;
 

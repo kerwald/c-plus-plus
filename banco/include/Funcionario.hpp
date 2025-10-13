@@ -10,7 +10,7 @@ class Funcionario : public Pessoa {
         float salario;
 
     public:
-        Funcionario( const std::string &nome, const Cpf &cpf, float salario );
+        Funcionario( const std::string &nome, const Cpf &cpf, const double &salario );
         virtual ~Funcionario();
         std::string getNome() const;
         double getSalario() const;
