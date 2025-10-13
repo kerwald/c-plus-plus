@@ -1,23 +1,26 @@
 #pragma once
+#include "Titular.hpp"
 #include <string>
 
 class Conta{ 
 
     private:
         static int numeroDeContas;
-        double saldo;
-        const std::string cpfTitular;
-        const std::string nomeTitular;
+        const Titular titular;
         const std::string numero;
+        double saldo;
 
     public:
         Conta( std::string nomeTitular, std::string cpfTitular, std::string numero, double saldo );
-        Conta( std::string nomeTitular,std::string cpfTitular, std::string numero );
-        Conta sacar( const int &valor );
-        Conta depositar( const int &valor );
+        Conta( Titular titular, std::string numero );
+        ~Conta(); // método é chamado quando o objeto é destruido seja por um delete ou por sair do escopo
+                  // Utilizalo quando for necessario desalocar memoria alocada 
+                  // ou qualquer operacao que precise ser feita quando um objeto ira deixar de existir
+                  // Como decrementar numeroDeContas
+        Conta& sacar( const int &valor );
+        Conta& depositar( const int &valor );
         double getSaldo() const;
-        std::string getCpfTitular() const;
-        std::string getNomeTitular() const; 
+        Titular getTitular() const;
         std::string getNumero() const; 
 
 };

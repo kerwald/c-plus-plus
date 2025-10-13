@@ -19,19 +19,18 @@ int Conta::numeroDeContas{}; // Inicializacao do atributo static privado
                       // um construtor de um objeto da classe Conta
 
 Conta::Conta( std::string nomeTitular, std::string cpfTitular, std::string numero, double saldo ) :
-    nomeTitular( nomeTitular ),
-    cpfTitular( cpfTitular ),
+    titular( nomeTitular, cpfTitular ),
     numero( numero )
     // Esses atributos sao obrigados a serem construidos por lista de inicialização porque sao atributos constantes "const"
-{
+{  
     this->saldo = saldo; // Não é obrigatório, mas é menos eficiente
     numeroDeContas++;
 }
 
-Conta::Conta( std::string nomeTitular,std::string cpfTitular, std::string numero ) : 
-    nomeTitular( nomeTitular ), 
-    cpfTitular( cpfTitular ), 
-    numero( numero )
+Conta::Conta( Titular titular, std::string numero ) : 
+    titular( titular ),
+    numero( numero ),
+    saldo( 0 )
 {
     numeroDeContas++;
 }  
@@ -78,8 +77,11 @@ Conta::Conta( std::string nomeTitular,std::string cpfTitular, std::string numero
 
     */
 
+Conta::~Conta(){
+    numeroDeContas--;
+}
 
-Conta Conta::sacar( const int &valor ){
+Conta& Conta::sacar( const int &valor ){
     if( ( saldo - valor ) >= 0){
         saldo -= valor;
     } else{
@@ -88,7 +90,7 @@ Conta Conta::sacar( const int &valor ){
     return *this;
 }
 
-Conta Conta::depositar( const int &valor ){
+Conta& Conta::depositar( const int &valor ){
     saldo += valor;
     return *this;
 }
@@ -97,12 +99,8 @@ double Conta::getSaldo() const{
     return saldo;
 }
 
-std::string Conta::getCpfTitular() const{
-    return cpfTitular;
-}
-
-std::string Conta::getNomeTitular() const{
-    return nomeTitular;
+Titular Conta::getTitular() const{
+    return titular;
 }
 
 std::string Conta::getNumero() const{
