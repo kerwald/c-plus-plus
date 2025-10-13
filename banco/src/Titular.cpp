@@ -1,15 +1,16 @@
 #include "Titular.hpp"
+#include "Cpf.hpp"
 #include <string>
 #include <iostream>
 
-Titular::Titular( const std::string &nome, const std::string cpf) : 
+Titular::Titular( const std::string &nome, const Cpf cpf) : 
     nome( nome ),
     cpf( cpf )
 {
     verificaValidadeNome( nome );
 }
 
-std::string Titular::getCpfTitular() const{
+Cpf Titular::getCpfTitular() const{
     return cpf;
 }
 std::string Titular::getNomeTitular() const{

@@ -1,16 +1,17 @@
 #pragma once
-#include<iostream>
+#include "Cpf.hpp"
+#include <iostream>
 #include <string>
 
 class Titular{
 
     private:
         std::string nome;
-        std::string cpf;
+        Cpf cpf;
 
     public:
-        Titular( const std::string &nome, const std::string cpf );
-        std::string getCpfTitular() const;
+        Titular( const std::string &nome, const Cpf cpf );
+        Cpf getCpfTitular() const;
         std::string getNomeTitular() const; 
     
     private:

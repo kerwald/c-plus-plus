@@ -19,7 +19,7 @@ int Conta::numeroDeContas{}; // Inicializacao do atributo static privado
                       // um construtor de um objeto da classe Conta
 
 Conta::Conta( std::string nomeTitular, std::string cpfTitular, std::string numero, double saldo ) :
-    titular( nomeTitular, cpfTitular ),
+    titular( nomeTitular, Cpf{ cpfTitular } ),
     numero( numero )
     // Esses atributos sao obrigados a serem construidos por lista de inicialização porque sao atributos constantes "const"
 {  
