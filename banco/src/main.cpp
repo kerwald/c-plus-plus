@@ -11,7 +11,7 @@ int main(){
 
     ContaPoupanca conta01{ "Felipe kerwald", Cpf{ "735.287.910-20" }, "12345", "0113578", 1500 };
 
-    std::cout << conta01.getTitular().getNome() << std::endl;
+    std::cout << conta01 << std::endl;
 
     ContaCorrente conta02{ Titular { "Joao Silveira", Cpf { "735.287.910-20" }, "12345" } , "6508467" };
 
@@ -94,11 +94,14 @@ int main(){
 //
 // ===================================================================================
 */
-    ContaPoupanca conta42{ "carlinhosmaia", Cpf{ "735.287.910-20" } , "1238884", "1234", 40000.00 };
+    ContaPoupanca conta42{ "carlinhos maia", Cpf{ "735.287.910-20" } , "1238884", "1234", 40000.00 };
     std::cout << conta42.getSaldo() << std::endl;
-    conta42 += 1000; // void operator += ( const double &valorADepositar );   
+    conta42 += 1000; // void operator += ( const double &valorADepositar );   SOBRECARGA DE OPERADOR
                      // Funciona devido a esse metodo na classe Conta
+
     std::cout << conta42.getSaldo() << std::endl;
+
+    std::cout << conta42 << std::endl;
 
     return 0;
 

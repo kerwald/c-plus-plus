@@ -103,14 +103,18 @@ double Conta::getSaldo() const{
     return  saldo;
 }
 
-Titular Conta::getTitular() const{
-    return titular;
-}
-
 std::string Conta::getNumero() const{
     return numero;
 }
 
 void Conta::operator += ( const double &valorADepositar ){
     depositar( valorADepositar );
+}
+
+std::ostream& operator<<( std::ostream& cout, const Conta &conta ){ // tipo o toString do java no sentido de usabilidade mas bem diferente
+    
+    cout << "Numero de conta: " << conta.numero << "\n" << "Nome do titular: " <<
+    conta.titular.getNome() << "\n" << "Cpf do titular: " << conta.titular.getCpf() << "\n" << "Saldo da conta: " << conta.saldo << std::endl;
+    return cout;
+    
 }

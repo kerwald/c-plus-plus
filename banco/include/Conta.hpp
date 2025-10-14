@@ -32,7 +32,6 @@ class Conta{
                                                      //     Ponteiro que aponta para uma tabela de ponteiros para os metodos corretos.
         Conta& depositar( const double &valor );
         double getSaldo() const;
-        Titular getTitular() const;
         std::string getNumero() const; 
         virtual double taxaDeSaque() const = 0; // Ter um ou mais desse = 0 determina se a classe é abstrada ou nao
                                                 // uma classe abstrata não pode ser instanciada diretamente e 
@@ -40,6 +39,7 @@ class Conta{
                                                 // Esse =0 diz que o metodo nao tem implementacao 
                                                 // e que a implementacao vai ser feito nas classes derivadas 
         void operator += ( const double &valorADepositar );
+        friend std::ostream& operator<<( std::ostream& cout, const Conta &conta );
 };
 
 /*

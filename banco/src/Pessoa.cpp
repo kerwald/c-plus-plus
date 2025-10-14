@@ -11,6 +11,14 @@ Pessoa::Pessoa( const std::string &nome, const Cpf &cpf ) :
     verificaValidadeNome( nome );
 }
 
+std::string Pessoa::getNome() const{
+    return nome;
+}
+
+std::string Pessoa::getCpf() const{
+    return cpf.getNumero();
+}
+
 void Pessoa::verificaValidadeNome( const std::string &nome ) const{
 
     if( nome.size() < 5 ){
@@ -19,4 +27,3 @@ void Pessoa::verificaValidadeNome( const std::string &nome ) const{
     }
 
 }
-
